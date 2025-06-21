@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presydia - Il supporto silenzioso che ti lascia spazio per crescere</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --blue: #0A3D62; /* Darker blue for headings */
@@ -32,34 +32,42 @@
         }
 
         header {
-            background-color: var(--beige); /* Changed background to beige to match the image background */
+            background-color: var(--white);
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .header-content {
-            /* This is where the image will be placed */
-            background-image: url('data:image/png;base64,IL_TUO_CODICE_BASE64_DELL_IMMAGINE_QUI'); /* SOSTITUISCI QUESTA STRINGA */
-            background-size: contain; /* Ensure the whole image is visible */
-            background-repeat: no-repeat;
-            background-position: center;
-            min-height: 200px; /* Adjust height as needed to fit your image */
-            display: flex; /* Kept for potential future text overlay or alignment */
+            display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Center the image vertically if space allows */
             max-width: 960px;
             margin: 0 auto;
-            border-radius: 8px; /* Optional: adds rounded corners to the header area */
-            overflow: hidden; /* Ensures image doesn't spill out */
         }
 
-        /* Hide the old text elements inside the header-content, as they are now part of the image */
-        .header-content img,
-        .header-content .header-text,
-        .header-content .tagline {
-            display: none;
+        .header-content h1.company-name {
+            font-family: 'Montserrat', sans-serif; /* Per mantenere il font pulito per il nome azienda */
+            margin: 0;
+            font-size: 3em; /* Grande per il nome azienda */
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header-content h2.elegant-name {
+            font-family: 'Playfair Display', serif; /* Font elegante per il nome */
+            font-style: italic;
+            margin: 10px 0 5px;
+            font-size: 2.2em; /* Dimensione adeguata per il nome */
+            color: var(--light-blue); /* Colore azzurro per il nome */
+        }
+
+        .header-content p.tagline-detail {
+            font-size: 1.1em;
+            color: var(--light-text);
+            margin: 5px 0 0;
+            max-width: 700px; /* Limita la larghezza per una migliore leggibilità */
         }
 
         nav {
@@ -256,7 +264,7 @@
         .footer-info {
             max-width: 700px;
             margin: 0 auto 20px;
-            text-align: justify;
+            text-align: center; /* Centrato per il footer */
         }
 
         .footer-info p {
@@ -265,9 +273,14 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .header-content {
-                /* On smaller screens, allow the height to be more flexible */
-                min-height: 150px; /* Adjust as needed */
+            .header-content h1.company-name {
+                font-size: 2.2em;
+            }
+            .header-content h2.elegant-name {
+                font-size: 1.8em;
+            }
+            .header-content p.tagline-detail {
+                font-size: 1em;
             }
             nav ul {
                 flex-direction: column;
@@ -288,7 +301,10 @@
 
     <header>
         <div class="header-content">
-            </div>
+            <h1 class="company-name">Presydia</h1>
+            <h2 class="elegant-name">Elisabeta Koleci</h2>
+            <p class="tagline-detail">Founder di Presydia • Assistenza segretariale Smart per professionisti • Organizzazione e presenza anche da remoto</p>
+        </div>
     </header>
 
     <nav>
@@ -320,7 +336,7 @@
                 <div class="service-item">
                     <h3>Organizzazione smart della giornata lavorativa</h3>
                     <p>Ottimizzazione delle attività per migliorare efficienza e concentrazione.</p>
-                </div>
+                <img src="uploaded:image.png-a5b134ab-d565-42fc-b9c6-00c27b9eda70" alt="immagine di Elisabeta Koleci come founder di Presydia"></div>
                 <div class="service-item">
                     <h3>Primo contatto con clienti e pazienti</h3>
                     <p>Accoglienza e gestione del primo contatto per instaurare fiducia fin dall’inizio.</p>
@@ -376,7 +392,6 @@
 
     <footer>
         <div class="footer-info">
-            
             <p>Dopo anni di esperienza nel settore medico e nella formazione, ho sentito il bisogno di creare qualcosa di mio: nasce Presydia.</p>
             <p>Un progetto che parla di organizzazione, di supporto silenzioso, di presenza anche da lontano.</p>
             <p>Con Presydia offro assistenza segretariale da remoto a professionisti e studi che vogliono concentrarsi sul loro lavoro, lasciando a me la gestione dei dettagli quotidiani.</p>
@@ -385,11 +400,8 @@
             <p>🔗 Seguimi anche su Instagram <a href="https://www.instagram.com/presydia" target="_blank" style="color: var(--white); text-decoration: underline;">@presydia</a></p>
             <p>📧 <a href="mailto:infopresydia@gmail.com" style="color: var(--white); text-decoration: underline;">infopresydia@gmail.com</a></p>
         </div>
-        
+        <p>Grazie a chi ha sempre creduto in me 💛</p>
     </footer>
 
 </body>
 </html>
-
-
-
