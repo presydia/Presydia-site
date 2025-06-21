@@ -1,103 +1,411 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Presydia – Il supporto silenzioso che ti lascia spazio per crescere</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fdf8f6;
-      color: #333;
-    }
-    header {
-      background-image: url('https://raw.githubusercontent.com/presydia/Presydia-site/main/docs/header-office.png');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      padding: 80px 20px;
-      color: white;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      background-color: rgba(0,0,0,0.4);
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 10px;
-    }
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .profile img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #e2d8d3;
-      margin-bottom: 20px;
-    }
-    .profile h2 {
-      margin: 10px 0 5px;
-    }
-    .profile p {
-      max-width: 600px;
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    .social {
-      margin-top: 30px;
-    }
-    .social a {
-      margin: 0 10px;
-      display: inline-block;
-    }
-    .social img {
-      width: 36px;
-      height: 36px;
-    }
-    footer {
-      background-color: #eee;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presydia - Il supporto silenzioso che ti lascia spazio per crescere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #0A3D62; /* Darker blue for headings */
+            --light-blue: #3C7CAD; /* Lighter blue for accents */
+            --beige: #F5F5DC; /* Soft beige for background/sections */
+            --text-color: #333;
+            --light-text: #666;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--beige);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--blue);
+            margin-bottom: 15px;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .header-content img {
+            max-width: 200px; /* Adjust as needed */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: var(--blue);
+        }
+
+        .header-text p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+            color: var(--light-blue);
+        }
+
+        .tagline {
+            font-style: italic;
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: var(--light-text);
+        }
+
+        nav {
+            background-color: var(--light-blue);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--blue);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--white);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .about-us p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: var(--beige);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .service-item h3 {
+            color: var(--light-blue);
+            margin-top: 0;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .package-card {
+            background-color: var(--beige);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .package-card h3 {
+            color: var(--light-blue);
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
+        .package-card .hours {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--blue);
+            margin: 10px 0;
+        }
+
+        .package-card p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .package-card.custom {
+            background-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        .package-card.custom h3, .package-card.custom .hours {
+            color: var(--white);
+        }
+
+        .call-to-action {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--light-blue);
+            color: var(--white);
+            border-radius: 8px;
+        }
+
+        .call-to-action a {
+            display: inline-block;
+            background-color: var(--blue);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-to-action a:hover {
+            background-color: #082A45; /* Darker blue on hover */
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 2.5em; /* Adjust icon size */
+            color: var(--light-blue); /* Default icon color */
+            transition: color 0.3s ease;
+        }
+        /* Specific social colors for a touch of fun */
+        .social-links a.instagram:hover { color: #C13584; } /* Instagram pink/purple */
+        .social-links a.facebook:hover { color: #1877F2; } /* Facebook blue */
+        .social-links a.linkedin:hover { color: #0A66C2; } /* LinkedIn blue */
+
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background-color: var(--blue);
+            color: var(--white);
+            font-size: 0.9em;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .footer-info {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            text-align: justify;
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            .header-text {
+                margin-left: 0;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+            .services-grid, .packages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-  <header>
-    <h1>Presydia</h1>
-    <p>Il supporto silenzioso che ti lascia spazio per crescere</p>
-  </header>
+    <header>
+        <div class="header-content">
+            <img src="https://i.imgur.com/your_image_hash.png" alt="Presydia Logo"> <div class="header-text">
+                <h1>Elisabeta Koleci</h1>
+                <p>Founder & Virtual Office Assistant</p>
+                <p class="email-header"><a href="mailto:infopresydia@gmail.com">infopresydia@gmail.com</a></p>
+                <p class="website-header"><a href="https://www.presydia.github.io/Presydia-site" target="_blank">www.presydia.github.io/Presydia-site</a></p>
+            </div>
+            <p class="tagline">Il supporto silenzioso che ti lascia spazio per crescere</p>
+        </div>
+    </header>
 
-  <section class="profile">
-    <img src="https://raw.githubusercontent.com/presydia/Presydia-site/main/docs/profilo-elisabeta.jpg" alt="Elisabeta Koleci">
-    <h2>Elisabeta Koleci</h2>
-    <p>Assistente virtuale, coordinatrice e formatrice per studi medici. Presydia nasce per offrire supporto personalizzato, efficiente e discreto a chi desidera far crescere il proprio progetto professionale senza rinunciare alla qualità della vita.</p>
+    <nav>
+        <ul>
+            <li><a href="#chi-siamo">Chi Siamo</a></li>
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#pacchetti">Pacchetti</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
 
-    <div class="social">
-      <a href="https://www.instagram.com/presydia?igsh=b3Uzd3FwaWNia3Fz&utm_source=qr" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100064220286768&mibextid=wwXIfr" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-      </a>
-      <a href="http://linkedin.com/in/elisabeta-koleci-19261091" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-      </a>
+    <div class="container">
+        <section id="chi-siamo" class="about-us">
+            <h2>Chi Siamo</h2>
+            <p>Presydia nasce per offrire un supporto professionale, discreto ed efficiente alle realtà sanitarie e ai liberi professionisti del settore salute e benessere. Non siamo solo un servizio di assistenza virtuale: siamo un partner strategico che alleggerisce le giornate di lavoro e permette di ritrovare ordine, chiarezza e serenità gestionale. Con esperienza diretta nella gestione di studi medici e odontoiatrici, portiamo valore attraverso l’organizzazione, la comunicazione e l’ascolto attivo delle esigenze di chi lavora per prendersi cura degli altri.</p>
+        </section>
+
+        <section id="servizi">
+            <h2>Servizi</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Gestione dell’agenda e degli appuntamenti</h3>
+                    <p>Organizzazione fluida degli orari di lavoro e delle visite, per uno studio sempre in ordine.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Risposta a email e messaggi clienti</h3>
+                    <p>Comunicazione professionale e tempestiva con i clienti, fornendo tutte le informazioni necessarie.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Organizzazione smart della giornata lavorativa</h3>
+                    <p>Ottimizzazione delle attività per migliorare efficienza e concentrazione.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Primo contatto con clienti e pazienti</h3>
+                    <p>Accoglienza e gestione del primo contatto per instaurare fiducia fin dall’inizio.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Piccola amministrazione e back office</h3>
+                    <p>Supporto nella gestione dei documenti, fatture, preventivi e archiviazione.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Supporto in fase di startup o riorganizzazione dello studio</h3>
+                    <p>Affiancamento operativo per chi apre o ristruttura il proprio studio.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pacchetti">
+            <h2>Pacchetti e Formule su Misura</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>Pacchetto Base</h3>
+                    <div class="hours">15 ore a settimana</div>
+                    <p>Perfetto per chi ha bisogno di una gestione regolare ma snella delle attività quotidiane.</p>
+                </div>
+                <div class="package-card">
+                    <h3>Pacchetto Pro</h3>
+                    <div class="hours">30 ore a settimana</div>
+                    <p>La soluzione ideale per uno studio dinamico che necessita di un’assistenza completa e strutturata.</p>
+                </div>
+                <div class="package-card custom">
+                    <h3>Pacchetto Personalizzato</h3>
+                    <div class="hours">Su misura</div>
+                    <p>Un piano totalmente flessibile creato insieme a te, in base al tuo ritmo e ai tuoi obiettivi.</p>
+                </div>
+            </div>
+            <div class="call-to-action">
+                <p>Contattaci per ricevere un preventivo personalizzato e senza impegno.</p>
+                <a href="#contatti">Richiedi un preventivo</a>
+            </div>
+        </section>
+
+        <section id="contatti">
+            <h2>Contatti</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:infopresydia@gmail.com">infopresydia@gmail.com</a></p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/presydia?igsh=b3Uzd3FwaWNia3Fz&utm_source=qr" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100064220286768&mibextid=wwXIfr" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/presydia" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </section>
     </div>
-  </section>
 
-  <footer>
-    &copy; 2025 Presydia - Tutti i diritti riservati
-  </footer>
+    <footer>
+        <div class="footer-info">
+            <p>🌱 Oggi è un giorno speciale per me.</p>
+            <p>Dopo anni di esperienza nel settore medico e nella formazione, ho sentito il bisogno di creare qualcosa di mio: nasce Presydia.</p>
+            <p>Un progetto che parla di organizzazione, di supporto silenzioso, di presenza anche da lontano.</p>
+            <p>Con Presydia offro assistenza segretariale da remoto a professionisti e studi che vogliono concentrarsi sul loro lavoro, lasciando a me la gestione dei dettagli quotidiani.</p>
+            <p>Non è solo un servizio: è un modo di essere al fianco degli altri, con cura, empatia e precisione.</p>
+            <p>✉️ Se conosci qualcuno che ha bisogno di “respirare” nel lavoro quotidiano… mettilo in contatto con me!</p>
+            <p>🔗 Seguimi anche su Instagram <a href="https://www.instagram.com/presydia" target="_blank" style="color: var(--white); text-decoration: underline;">@presydia</a></p>
+            <p>📧 <a href="mailto:infopresydia@gmail.com" style="color: var(--white); text-decoration: underline;">infopresydia@gmail.com</a></p>
+        </div>
+        <p>Grazie a chi ha sempre creduto in me 💛</p>
+    </footer>
 
 </body>
 </html>
