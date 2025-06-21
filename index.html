@@ -32,43 +32,34 @@
         }
 
         header {
-            background-color: var(--white);
+            background-color: var(--beige); /* Changed background to beige to match the image background */
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .header-content {
-            display: flex;
+            /* This is where the image will be placed */
+            background-image: url('data:image/png;base64,IL_TUO_CODICE_BASE64_DELL_IMMAGINE_QUI'); /* SOSTITUISCI QUESTA STRINGA */
+            background-size: contain; /* Ensure the whole image is visible */
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 200px; /* Adjust height as needed to fit your image */
+            display: flex; /* Kept for potential future text overlay or alignment */
             flex-direction: column;
             align-items: center;
+            justify-content: center; /* Center the image vertically if space allows */
             max-width: 960px;
             margin: 0 auto;
+            border-radius: 8px; /* Optional: adds rounded corners to the header area */
+            overflow: hidden; /* Ensures image doesn't spill out */
         }
 
-        .header-content img {
-            max-width: 200px; /* Adjust as needed */
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .header-text h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: var(--blue);
-        }
-
-        .header-text p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
-            color: var(--light-blue);
-        }
-
-        .tagline {
-            font-style: italic;
-            margin-top: 15px;
-            font-size: 1.1em;
-            color: var(--light-text);
+        /* Hide the old text elements inside the header-content, as they are now part of the image */
+        .header-content img,
+        .header-content .header-text,
+        .header-content .tagline {
+            display: none;
         }
 
         nav {
@@ -275,11 +266,8 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column;
-            }
-            .header-text {
-                margin-left: 0;
-                text-align: center;
+                /* On smaller screens, allow the height to be more flexible */
+                min-height: 150px; /* Adjust as needed */
             }
             nav ul {
                 flex-direction: column;
@@ -300,14 +288,7 @@
 
     <header>
         <div class="header-content">
-            <img src="https://i.imgur.com/your_image_hash.png" alt="Presydia Logo"> <div class="header-text">
-                <h1>Elisabeta Koleci</h1>
-                <p>Founder & Virtual Office Assistant</p>
-                <p class="email-header"><a href="mailto:infopresydia@gmail.com">infopresydia@gmail.com</a></p>
-                <p class="website-header"><a href="https://www.presydia.github.io/Presydia-site" target="_blank">www.presydia.github.io/Presydia-site</a></p>
             </div>
-            <p class="tagline">Il supporto silenzioso che ti lascia spazio per crescere</p>
-        </div>
     </header>
 
     <nav>
@@ -395,7 +376,7 @@
 
     <footer>
         <div class="footer-info">
-            <p>🌱 Oggi è un giorno speciale per me.</p>
+            
             <p>Dopo anni di esperienza nel settore medico e nella formazione, ho sentito il bisogno di creare qualcosa di mio: nasce Presydia.</p>
             <p>Un progetto che parla di organizzazione, di supporto silenzioso, di presenza anche da lontano.</p>
             <p>Con Presydia offro assistenza segretariale da remoto a professionisti e studi che vogliono concentrarsi sul loro lavoro, lasciando a me la gestione dei dettagli quotidiani.</p>
@@ -404,8 +385,11 @@
             <p>🔗 Seguimi anche su Instagram <a href="https://www.instagram.com/presydia" target="_blank" style="color: var(--white); text-decoration: underline;">@presydia</a></p>
             <p>📧 <a href="mailto:infopresydia@gmail.com" style="color: var(--white); text-decoration: underline;">infopresydia@gmail.com</a></p>
         </div>
-        <p>Grazie a chi ha sempre creduto in me 💛</p>
+        
     </footer>
 
 </body>
 </html>
+
+
+
